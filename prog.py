@@ -1,14 +1,9 @@
-from PIL import Image
+
 import pytesseract                  #pour faire de la reconnaissance de caracteres
 import cv2                          #pour appliquer des methodes de TIM
 import numpy as np                  #pour appliquer des methodes de TIM
 import matplotlib.pyplot as plt     #pour afficher une image
-import sys                          #pour stopper un programme
-import os                           #NE SEMBLE PAS ETRE UTILISE
 import math                         #pour utiliser floor et ceil
-import pylab                        #pour afficher des courbes
-
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
 
 def ocr_core(image):
