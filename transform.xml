@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:template match="/">
+<html> 
+<head>
+        <style>
+            table, th, td {
+              border: 1px solid black;
+              border-collapse: collapse;
+            }
+            th, td {
+              padding: 5px;
+              text-align: left;    
+            }
+        </style>
+
+</head>
+<body>
+    <h2>Carte d'immatriculation</h2>
+    <h3>Informations d'immatriculation</h3>
+
+    <table>
+        <tr>
+            <td>Numéro d'immatriculation</td>
+            <td><xsl:value-of select="carteGrise/donneesImmatriculation/numeroImmatriculation"/></td>
+        </tr>
+        <tr>
+            <td>Date de la première immatriculation</td>
+            <td><xsl:value-of select="carteGrise/donneesImmatriculation/datePremiereImmatriculation"/></td>
+        </tr>
+
+        <tr>
+            <td>Date de l'immatriculation du document</td>
+            <td><xsl:value-of select="carteGrise/donneesImmatriculation/dateImmatriculationCourante"/></td>
+        </tr>    
+    
+        <tr>
+            <td>Durée de validité</td>
+            <td><xsl:value-of select="carteGrise/donneesImmatriculation/dureeValidite"/></td>
+        </tr>    
+    </table>
+
+    <h3>Informations nominatives</h3>
+
+    <h4>Proprietaire du document d'immatriculation</h4>
+    <table>
+        <tr>
+            <td>Nom</td>
+            <td><xsl:value-of select="carteGrise/donneesNominative/proprietaireCarteGrise/nom"/></td>
+        </tr>
+
+        <tr>
+            <td>Prenom</td>
+            <td><xsl:value-of select="carteGrise/donneesNominative/proprietaireCarteGrise/prenom"/></td>
+        </tr>
+
+        <tr>
+            <td>Date de naissance</td>
+            <td><xsl:value-of select="carteGrise/donneesNominative/proprietaireCarteGrise/dateNaissance"/></td>
+        </tr>        
+    </table>
+
+    
+    <h4>Proprietaire du vehicule</h4>
+    <table>
+        <tr>
+            <td>Nom</td>
+            <td><xsl:value-of select="carteGrise/donneesNominative/proprietaireVehicule/nom"/></td>
+        </tr>
+    
+        <tr>
+            <td>Prenom</td>
+            <td><xsl:value-of select="carteGrise/donneesNominative/proprietaireVehicule/prenom"/></td>
+        </tr>
+
+        <tr>
+            <td>Date de naissance</td>
+            <td><xsl:value-of select="carteGrise/donneesNominative/proprietaireVehicule/dateNaissance"/></td>
+        </tr>    
+    </table>
+
+    <h4>Autre utilisateur du vehicule</h4>
+
+    <table>
+        <tr>
+            <td>Nom</td>
+            <td><xsl:value-of select="carteGrise/donneesNominative/utilisateurVehicule/nom"/></td>
+        </tr>
+    
+        <tr>
+            <td>Prenom</td>
+            <td><xsl:value-of select="carteGrise/donneesNominative/utilisateurVehicule/prenom"/></td>
+        </tr>
+
+        <tr>
+            <td>Date de naissance</td>
+            <td><xsl:value-of select="carteGrise/donneesNominative/utilisateurVehicule/dateNaissance"/></td>
+        </tr>    
+    
+    </table>
+
+
+    <h3>Informations du Véhicule</h3>
+    
+    <h4>Résumé</h4>
+        <table>
+        <tr>
+            <td>Marque</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsGenerales/marque"/></td>
+        </tr>
+    
+        <tr>
+            <td>Type du Vehicule</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsGenerales/typeVehicule"/></td>
+        </tr>
+
+        <tr>
+            <td>Dénomination commerciale</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsGenerales/denominationCommerciale"/></td>
+        </tr>
+   
+        <tr>
+            <td>Couleur</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsGenerales/couleur"/></td>
+        </tr>
+
+        <tr>
+            <td>Places assisses</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsGenerales/places/placeAssise"/></td>
+        </tr>
+
+        <tr>
+            <td>Place debout</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsGenerales/places/placeDebout"/></td>
+        </tr>
+
+
+        <tr>
+            <td>Catégorie du véhicule</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsGenerales/categorieVehicule"/></td>
+        </tr>
+
+
+        <tr>
+            <td>Destination et usage</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsGenerales/destinationEtUsage"/></td>
+        </tr>
+
+        <tr>
+            <td>Carroserie et usage</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsGenerales/carroserie"/></td>
+        </tr>
+    </table>
+
+    <h4>Informations Techniques</h4>
+    <h5>Informations principales</h5>
+    <table>
+    
+       <tr>
+            <td>Numéro de série</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsTechniques/donneesEssentielles/numeroSerie"/></td>
+        </tr>
+
+        <tr>
+            <td>Numéro d'homologation</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsTechniques/donneesEssentielles/numeroHomologation"/></td>
+        </tr>
+
+        <tr>
+            <td>Nombre d'axes</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsTechniques/donneesEssentielles/axeData/nombreAxe"/></td>
+        </tr>
+
+        <tr>
+            <td>Distance inter-axes</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsTechniques/donneesEssentielles/axeData/distanceInterAxe"/></td>
+        </tr>
+
+        <tr>
+            <td>Rapport puissance masse</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsTechniques/donneesEssentielles/rapportPuissanceMasse"/></td>
+        </tr>
+
+        <tr>
+            <td>Vitesse maximale</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsTechniques/donneesEssentielles/vitesseMax"/></td>
+        </tr>
+
+        <tr>
+            <td>Capacité du réservoir</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsTechniques/donneesEssentielles/capaciteReservoir"/></td>
+        </tr>  
+    
+    </table>
+
+    <h5>Moteur</h5>
+    <table>
+    
+        <tr>
+            <td>Cylindrée</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsTechniques/moteur/cylindree"/></td>
+        </tr>
+        
+        <tr>
+            <td>Puissance maximale</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsTechniques/moteur/puissanceMaximale"/></td>
+        </tr>
+
+        <tr>
+            <td>Type de carburant</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsTechniques/moteur/typeCarburant"/></td>
+        </tr>
+
+        <tr>
+            <td>Régime nominal</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsTechniques/moteur/regimeNominal"/></td>
+        </tr>
+
+        <tr>
+            <td>Type du moteur</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsTechniques/moteur/typeMoteur"/></td>
+        </tr>
+   
+    </table>
+
+    <h5>Environnement</h5>
+    <table>
+        <tr>
+            <td>Niveau sonore à l'arrêt</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsTechniques/environnemental/niveauxSonores/arret"/></td>
+        </tr>
+
+        <tr>
+            <td>Niveau sonore en marche</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsTechniques/environnemental/niveauxSonores/marche"/></td>
+        </tr>
+
+        <tr>
+            <td>Emission de CO2</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsTechniques/environnemental/emissionGaz/CO2"/></td>
+        </tr>
+
+        <tr>
+            <td>Classe environnementale Européene</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsTechniques/environnemental/emissionGaz/classeEnvironnementaleCE"/></td>
+        </tr>
+
+    </table>
+
+
+    <h5>Masses</h5>
+    <table>
+        <tr>
+            <td>Masse maximale techniquement Admissible</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsTechniques/masses/maxTechniquementAdmissible"/></td>
+        </tr>
+
+        <tr>
+            <td>Masse maximale véhicule en service</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsTechniques/masses/maxVehiculeEnService"/></td>
+        </tr>
+
+        <tr>
+            <td>Masse maximale ensemble en service</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsTechniques/masses/maxEnsembleEnService"/></td>
+        </tr>
+
+        <tr>
+            <td>Masse en service</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsTechniques/masses/masseEnService"/></td>
+        </tr>
+
+        <tr>
+            <td>Masse maximale remorque freinée</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsTechniques/masses/remorques/freinee"/></td>
+        </tr>
+
+        <tr>
+            <td>Masse maximale remorque non freinée</td>
+            <td><xsl:value-of select="carteGrise/informationVehicule/informationsTechniques/masses/remorques/nonFreinee"/></td>
+        </tr>
+  
+    </table>
+
+
+</body>
+</html>
+</xsl:template>
+</xsl:stylesheet>
+
