@@ -1,0 +1,202 @@
+<?xml version = "1.0" encoding = "UTF-8" standalone = "yes" ?>
+
+
+<!DOCTYPE carteGrise [
+    <!ELEMENT carteGrise (donneesImmatriculation, donneesNominative,informationVehicule)>
+
+
+    <!-- DONNEES IMMATRICULATION-->
+    <!ELEMENT donneesImmatriculation (numeroImmatriculation, datePremiereImmatriculation,
+        dateImmatriculationCourante, dureeValidite)>
+    <!ELEMENT numeroImmatriculation (#PCDATA)>
+    <!ELEMENT datePremiereImmatriculation (#PCDATA)>
+    <!ELEMENT dateImmatriculationCourante (#PCDATA)>
+    <!ELEMENT dureeValidite (#PCDATA)>
+
+    <!-- DONNEES NOMINATIVES-->
+    <!ELEMENT donneesNominative (proprietaireCarteGrise,proprietaireVehicule, utilisateurVehicule)>
+    <!ELEMENT proprietaireCarteGrise (nom,prenom,dateNaissance)>
+    <!ELEMENT proprietaireVehicule (nom,prenom,dateNaissance)>
+    <!ELEMENT utilisateurVehicule (nom,prenom,dateNaissance)>
+    <!ELEMENT nom (#PCDATA)>
+    <!ELEMENT prenom (#PCDATA)>
+    <!ELEMENT dateNaissance (#PCDATA)>
+
+    <!-- INFORMATION VEHICULE-->
+    <!ELEMENT informationVehicule (informationsGenerales, informationsTechniques)>
+
+         <!-- INFORMATION GENERALES-->
+         <!ELEMENT informationsGenerales (marque, typeVehicule, denominationCommerciale,
+            couleur, places, categorieVehicule, destinationEtUsage, carroserie)>
+        
+        <!ELEMENT marque (#PCDATA)>
+        <!ELEMENT typeVehicule (#PCDATA)>
+        <!ELEMENT denominationCommerciale (#PCDATA)>
+        <!ELEMENT couleur (#PCDATA)>
+        <!ELEMENT places (placeAssise, placeDebout)>
+        <!ELEMENT placeAssise (#PCDATA)>
+        <!ELEMENT placeDebout (#PCDATA)>
+        <!ELEMENT categorieVehicule (#PCDATA)>
+        <!ELEMENT destinationEtUsage (#PCDATA)>
+        <!ELEMENT carroserie (#PCDATA)>
+
+        <!--INFORMATION TECHNIQUE-->
+        <!ELEMENT informationsTechniques (donneesEssentielles, moteur, environnemental,
+            masses)>
+
+            <!--DONNEES ESSENTIELLES -->
+            <!ELEMENT donneesEssentielles (numeroSerie, numeroHomologation, axeData, 
+                rapportPuissanceMasse, vitesseMax, capaciteReservoir)>
+            <!ELEMENT numeroSerie (#PCDATA)>
+            <!ELEMENT numeroHomologation (#PCDATA)>
+            <!ELEMENT axeData (nombreAxe, distanceInterAxe)>
+            <!ELEMENT nombreAxe (#PCDATA)>
+            <!ELEMENT distanceInterAxe (#PCDATA)>
+            <!ELEMENT rapportPuissanceMasse (#PCDATA)>
+            <!ELEMENT vitesseMax (#PCDATA)>
+            <!ELEMENT capaciteReservoir (#PCDATA)>
+        
+            <!-- MOTEUR -->
+            <!ELEMENT moteur (cylindree, puissanceMaximale, typeCarburant, regimeNominal,
+                typeMoteur)>
+            <!ELEMENT cylindree (#PCDATA)>
+            <!ELEMENT puissanceMaximale (#PCDATA)>
+            <!ELEMENT typeCarburant (#PCDATA)>
+            <!ELEMENT regimeNominal (#PCDATA)>
+            <!ELEMENT typeMoteur (#PCDATA)>
+
+            <!-- ENVIRONNEMENTAL-->
+            <!ELEMENT environnemental (niveauxSonores, emissionGaz)>
+            <!ELEMENT niveauxSonores (arret, marche)>
+            <!ELEMENT arret (#PCDATA)>
+            <!ELEMENT marche (#PCDATA)>
+            <!ELEMENT emissionGaz (CO2, classeEnvironnementaleCE)>
+            <!ELEMENT CO2 (#PCDATA)>
+            <!ELEMENT classeEnvironnementaleCE (#PCDATA)>
+
+            <!-- MASSE -->
+            <!ELEMENT masses (maxTechniquementAdmissible, maxVehiculeEnService,
+                maxEnsembleEnService, masseEnService, remorques, repartitionAxes)>
+            <!ELEMENT maxTechniquementAdmissible (#PCDATA)>
+            <!ELEMENT maxVehiculeEnService (#PCDATA)>
+            <!ELEMENT maxEnsembleEnService (#PCDATA)>
+            <!ELEMENT masseEnService (#PCDATA)>
+            <!ELEMENT remorques (freinee, nonFreinee)>
+            <!ELEMENT freinee (#PCDATA)>
+            <!ELEMENT nonFreinee (#PCDATA)>
+            <!ELEMENT repartitionAxes (axe+)>
+            <!ELEMENT axe (numeroAxe, masseAxe)>
+            <!ELEMENT numeroAxe (#PCDATA)>
+            <!ELEMENT masseAxe (#PCDATA)>
+            
+    
+]>
+     
+
+
+
+<carteGrise>
+
+    <donneesImmatriculation>
+        <numeroImmatriculation>BF975XH</numeroImmatriculation>
+        <datePremiereImmatriculation>24/08/2006</datePremiereImmatriculation>
+        <dateImmatriculationCourante>26/09/2014</dateImmatriculationCourante>
+        <dureeValidite>10 ans</dureeValidite>
+    </donneesImmatriculation>
+
+    <donneesNominative>
+        <proprietaireCarteGrise>
+            <nom>RICHARD</nom>
+            <prenom>herve</prenom>
+            <dateNaissance>25/04/1966</dateNaissance>
+        </proprietaireCarteGrise>
+
+        <proprietaireVehicule>
+            <nom>RICHARD</nom>
+            <prenom>herve</prenom>
+            <dateNaissance>25/04/1966</dateNaissance>       
+        </proprietaireVehicule>
+
+        <utilisateurVehicule>
+            <nom>GUENDOUZI</nom>
+            <prenom>Matteo</prenom>        
+            <dateNaissance>14/04/1999</dateNaissance>
+        </utilisateurVehicule>
+    </donneesNominative>
+
+
+    <informationVehicule> 
+
+        <informationsGenerales>
+            <marque>Mercedez-Benz</marque>
+            <typeVehicule>0101 CDC5 F01YY5SU</typeVehicule>
+            <denominationCommerciale>X-Klasse</denominationCommerciale>
+            <couleur>rouge</couleur>
+            <places>
+                <placeAssise>5</placeAssise>
+                <placeDebout>0</placeDebout>
+            </places>
+            <categorieVehicule>N1G</categorieVehicule>
+            <destinationEtUsage>usage personnel</destinationEtUsage>
+            <carroserie>Break</carroserie>
+        </informationsGenerales>
+
+        <informationsTechniques>
+            <donneesEssentielles>
+                <numeroSerie>WFF4702541G545481</numeroSerie>
+                <numeroHomologation></numeroHomologation>
+                <axeData>
+                    <nombreAxe>2</nombreAxe>
+                    <distanceInterAxe>50mm</distanceInterAxe>
+                </axeData>
+                <rapportPuissanceMasse>200</rapportPuissanceMasse>
+                <vitesseMax>180</vitesseMax>
+                <capaciteReservoir>60</capaciteReservoir>
+            </donneesEssentielles>
+
+            <moteur>
+                <cylindree>2987.00</cylindree>
+                <puissanceMaximale>190.00</puissanceMaximale>
+                <typeCarburant>GASOL</typeCarburant>
+                <regimeNominal>2550</regimeNominal>
+                <typeMoteur>642</typeMoteur>
+            </moteur>
+
+            <environnemental>
+                <niveauxSonores>
+                    <arret>75</arret>
+                    <marche>120</marche>
+                </niveauxSonores>
+                
+                <emissionGaz>
+                    <CO2>230.0</CO2>
+                    <classeEnvironnementaleCE>2016/646/UE</classeEnvironnementaleCE>
+                </emissionGaz>
+            </environnemental>
+
+            <masses>
+                <maxTechniquementAdmissible>3000</maxTechniquementAdmissible>
+                <maxVehiculeEnService>3250</maxVehiculeEnService>
+                <maxEnsembleEnService>6180</maxEnsembleEnService>
+                <masseEnService>2500</masseEnService>
+              
+                <remorques>
+                    <freinee>2000</freinee>
+                    <nonFreinee>1500</nonFreinee>
+                </remorques>
+
+                <repartitionAxes>
+                    <axe>
+                        <numeroAxe>1</numeroAxe>
+                        <masseAxe>500</masseAxe>
+                    </axe>
+                     <axe>
+                        <numeroAxe>2</numeroAxe>
+                        <masseAxe>600</masseAxe>
+                    </axe>        
+                </repartitionAxes>
+
+            </masses>
+        </informationsTechniques>
+    </informationVehicule>
+</carteGrise>

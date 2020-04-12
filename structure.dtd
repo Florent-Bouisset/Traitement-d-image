@@ -1,0 +1,91 @@
+<!DOCTYPE carteGrise [
+    <!ELEMENT carteGrise (donneesImmatriculation, donneesNominative,informationVehicule)>
+
+
+    <!-- DONNEES IMMATRICULATION-->
+    <!ELEMENT donneesImmatriculation (numeroImmatriculation, datePremiereImmatriculation,
+        dateImmatriculationCourante, dureeValidite)>
+    <!ELEMENT numeroImmatriculation (#PCDATA)>
+    <!ELEMENT datePremiereImmatriculation (#PCDATA)>
+    <!ELEMENT dateImmatriculationCourante (#PCDATA)>
+    <!ELEMENT dureeValidite (#PCDATA)>
+
+    <!-- DONNEES NOMINATIVES-->
+    <!ELEMENT donneesNominative (proprietaireCarteGrise,proprietaireVehicule, utilisateurVehicule)>
+    <!ELEMENT proprietaireCarteGrise (nom,prenom,dateNaissance)>
+    <!ELEMENT proprietaireVehicule (nom,prenom,dateNaissance)>
+    <!ELEMENT utilisateurVehicule (nom,prenom,dateNaissance)>
+    <!ELEMENT nom (#PCDATA)>
+    <!ELEMENT prenom (#PCDATA)>
+    <!ELEMENT dateNaissance (#PCDATA)>
+
+    <!-- INFORMATION VEHICULE-->
+    <!ELEMENT informationVehicule (informationsGenerales, informationsTechniques)>
+
+         <!-- INFORMATION GENERALES-->
+         <!ELEMENT informationsGenerales (marque, typeVehicule, denominationCommerciale,
+            couleur, places, categorieVehicule, destinationEtUsage, carroserie)>
+        
+        <!ELEMENT marque (#PCDATA)>
+        <!ELEMENT typeVehicule (#PCDATA)>
+        <!ELEMENT denominationCommerciale (#PCDATA)>
+        <!ELEMENT couleur (#PCDATA)>
+        <!ELEMENT places (placeAssise, placeDebout)>
+        <!ELEMENT placeAssise (#PCDATA)>
+        <!ELEMENT placeDebout (#PCDATA)>
+        <!ELEMENT categorieVehicule (#PCDATA)>
+        <!ELEMENT destinationEtUsage (#PCDATA)>
+        <!ELEMENT carroserie (#PCDATA)>
+
+        <!--INFORMATION TECHNIQUE-->
+        <!ELEMENT informationsTechniques (donneesEssentielles, moteur, environnemental,
+            masses)>
+
+            <!--DONNEES ESSENTIELLES -->
+            <!ELEMENT donneesEssentielles (numeroSerie, numeroHomologation, axeData, 
+                rapportPuissanceMasse, vitesseMax, capaciteReservoir)>
+            <!ELEMENT numeroSerie (#PCDATA)>
+            <!ELEMENT numeroHomologation (#PCDATA)>
+            <!ELEMENT axeData (nombreAxe, distanceInterAxe)>
+            <!ELEMENT nombreAxe (#PCDATA)>
+            <!ELEMENT distanceInterAxe (#PCDATA)>
+            <!ELEMENT rapportPuissanceMasse (#PCDATA)>
+            <!ELEMENT vitesseMax (#PCDATA)>
+            <!ELEMENT capaciteReservoir (#PCDATA)>
+        
+            <!-- MOTEUR -->
+            <!ELEMENT moteur (cylindree, puissanceMaximale, typeCarburant, regimeNominal,
+                typeMoteur)>
+            <!ELEMENT cylindree (#PCDATA)>
+            <!ELEMENT puissanceMaximale (#PCDATA)>
+            <!ELEMENT typeCarburant (#PCDATA)>
+            <!ELEMENT regimeNominal (#PCDATA)>
+            <!ELEMENT typeMoteur (#PCDATA)>
+
+            <!-- ENVIRONNEMENTAL-->
+            <!ELEMENT environnemental (niveauxSonores, emissionGaz)>
+            <!ELEMENT niveauxSonores (arret, marche)>
+            <!ELEMENT arret (#PCDATA)>
+            <!ELEMENT marche (#PCDATA)>
+            <!ELEMENT emissionGaz (CO2, classeEnvironnementaleCE)>
+            <!ELEMENT CO2 (#PCDATA)>
+            <!ELEMENT classeEnvironnementaleCE (#PCDATA)>
+
+            <!-- MASSE -->
+            <!ELEMENT masses (maxTechniquementAdmissible, maxVehiculeEnService,
+                maxEnsembleEnService, masseEnService, remorques, repartitionAxes)>
+            <!ELEMENT maxTechniquementAdmissible (#PCDATA)>
+            <!ELEMENT maxVehiculeEnService (#PCDATA)>
+            <!ELEMENT maxEnsembleEnService (#PCDATA)>
+            <!ELEMENT masseEnService (#PCDATA)>
+            <!ELEMENT remorques (freinee, nonFreinee)>
+            <!ELEMENT freinee (#PCDATA)>
+            <!ELEMENT nonFreinee (#PCDATA)>
+            <!ELEMENT repartitionAxes (axe+)>
+            <!ELEMENT axe (numeroAxe, masseAxe)>
+            <!ELEMENT numeroAxe (#PCDATA)>
+            <!ELEMENT masseAxe (#PCDATA)>
+            
+    
+]>
+     
