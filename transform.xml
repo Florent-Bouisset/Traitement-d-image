@@ -4,6 +4,12 @@
 <html> 
 <head>
         <style>
+        body {
+            color:black;
+            background-color:white;
+            background-image:url(https://thumbs.dreamstime.com/b/guilloche-money-pattern-background-monochrome-texture-waves-original-certificate-voucher-banknote-design-82920020.jpg);
+            margin:0;
+}
             table, th, td {
               border: 1px solid black;
               border-collapse: collapse;
