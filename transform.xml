@@ -3,23 +3,7 @@
 <xsl:template match="/">
 <html> 
 <head>
-        <style>
-        body {
-            color:black;
-            background-color:white;
-            background-image:url('arriere plan.png');
-            margin:0;
-}
-            table, th, td {
-              border: 1px solid black;
-              border-collapse: collapse;
-            }
-            th, td {
-              padding: 5px;
-              text-align: left;    
-            }
-        </style>
-
+   <link rel="stylesheet" type="text/css" href="style.css"/>>
 </head>
 <body>
     <h2>Carte d'immatriculation</h2>

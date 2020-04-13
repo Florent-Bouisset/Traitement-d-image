@@ -51,11 +51,11 @@
                 <numeroHomologation></numeroHomologation>
                 <axeData>
                     <nombreAxe>2</nombreAxe>
-                    <distanceInterAxe>50mm</distanceInterAxe>
+                    <distanceInterAxe>50 mm</distanceInterAxe>
                 </axeData>
                 <rapportPuissanceMasse>200</rapportPuissanceMasse>
-                <vitesseMax>180</vitesseMax>
-                <capaciteReservoir>60</capaciteReservoir>
+                <vitesseMax>180 km/h</vitesseMax>
+                <capaciteReservoir>60 L</capaciteReservoir>
             </donneesEssentielles>
 
             <moteur>
