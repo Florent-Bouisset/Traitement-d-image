@@ -1,5 +1,5 @@
-<!DOCTYPE carteGrise [
-    <!ELEMENT carteGrise (donneesImmatriculation, donneesNominative,informationVehicule)>
+
+    <!ELEMENT carteGrise (donneesImmatriculation, donneesNominative, informationVehicule)>
 
 
     <!-- DONNEES IMMATRICULATION-->
@@ -85,7 +85,3 @@
             <!ELEMENT axe (numeroAxe, masseAxe)>
             <!ELEMENT numeroAxe (#PCDATA)>
             <!ELEMENT masseAxe (#PCDATA)>
-            
-    
-]>
-     
