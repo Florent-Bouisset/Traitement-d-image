@@ -3,7 +3,7 @@
 <xsl:template match="/">
 <html> 
 <head>
-   <link rel="stylesheet" type="text/css" href="style.css"/>>
+   <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
     <h2>Carte d'immatriculation</h2>
@@ -32,7 +32,7 @@
 
     <h3>Informations nominatives</h3>
 
-    <h4>Proprietaire du document d'immatriculation</h4>
+    <h4>Propriétaire du document d'immatriculation</h4>
     <table>
         <tr>
             <td>Nom</td>
@@ -51,7 +51,7 @@
     </table>
 
     
-    <h4>Proprietaire du vehicule</h4>
+    <h4>Propriétaire du vehicule</h4>
     <table>
         <tr>
             <td>Nom</td>
