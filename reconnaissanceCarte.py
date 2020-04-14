@@ -403,30 +403,129 @@ print("champ I: " + dateDerniereImmatriculation)
 print("champ J: " + categorieVehicule)
 
 
-
+#####################     CREATION DE LA STRUCTURE XML          ############
 
 path = "generatedXML.xml"
 
-top = Element('carteGrise')
+carteGrise = Element('carteGrise')
 
-comment = Comment('Generated for PyMOTW')
-top.append(comment)
+### DONNEES IMMATRICULATION
 
-child = SubElement(top, 'child')
-child.text = 'This child contains text.'
+XMLdonneesImmatriculation = SubElement(carteGrise,'donneesImmatriculation')
+XMLnumeroImmatriculation = SubElement(XMLdonneesImmatriculation, 'numeroImmatriculation')
+XMLdatePremiereImmatriculation = SubElement(XMLdonneesImmatriculation,'datePremiereImmatriculation')
+XMLdateImmatriculationCourante = SubElement(XMLdonneesImmatriculation, 'dateImmatriculationCourante')
 
-child_with_tail = SubElement(top, 'child_with_tail')
-child_with_tail.text = '5'
-child_with_tail.tail = 'And "tail" text.'
+XMLdureeValidite = SubElement(XMLdonneesImmatriculation, 'dureeValidite')
 
-child_with_entity_ref = SubElement(top, 'child_with_entity_ref')
-child_with_entity_ref.text = 'This & that'
+### DONNEES NOMINATIVE
 
+XMLdonneesNominative = SubElement(carteGrise,'donneesNominative')
+XMLproprietaireCarteGrise =SubElement(XMLdonneesNominative, 'proprietaireCarteGrise')
+XMLnom1 = SubElement(XMLproprietaireCarteGrise, 'nom')
+XMLpenom1 = SubElement(XMLproprietaireCarteGrise, 'prenom')
+XMLdateN1 = SubElement(XMLproprietaireCarteGrise, 'dateNaissance')
+XMLadresse1 = SubElement(XMLproprietaireCarteGrise, 'adresse')
+
+XMLproprietaireVehicule =SubElement(XMLdonneesNominative, 'proprietaireVehicule')
+XMLnom2 = SubElement(XMLproprietaireVehicule, 'nom')
+XMLpenom2 = SubElement(XMLproprietaireVehicule, 'prenom')
+XMLdateN2 = SubElement(XMLproprietaireVehicule, 'dateNaissance')
+XMLadresse2 = SubElement(XMLproprietaireVehicule, 'adresse')
+
+XMLutilisateurVehicule =SubElement(XMLdonneesNominative, 'utilisateurVehicule')
+XMLnom3 = SubElement(XMLutilisateurVehicule, 'nom')
+XMLpenom3 = SubElement(XMLutilisateurVehicule, 'prenom')
+XMLdateN3 = SubElement(XMLutilisateurVehicule, 'dateNaissance')
+XMLadresse3 = SubElement(XMLutilisateurVehicule, 'adresse')
+
+
+#DONNEES VEHICULES
+
+XMLdonneesVehicules = SubElement (carteGrise, 'informationVehicule')
+XMLinformationsGenerales = SubElement (XMLdonneesVehicules, 'informationsGenerales')
+XMLmarque = SubElement(XMLinformationsGenerales, 'marque')
+XMLtypeVehicule = SubElement(XMLinformationsGenerales,'typeVehicule')
+XMLnomCommercial = SubElement(XMLinformationsGenerales, 'denominationCommerciale')
+XMLcouleur = SubElement(XMLinformationsGenerales, 'couleur')
+XMLplaces = SubElement(XMLinformationsGenerales, 'places')
+XMLplaceAssise = SubElement(XMLplaces, 'placeAssise')
+XMLplaceDebout = SubElement(XMLplaces, 'placeDebout')
+XMLcategorieVehicule = SubElement(XMLinformationsGenerales, 'categorieVehicule')
+XMLdestinationEtUsage = SubElement(XMLinformationsGenerales, 'destinationEtUsage')
+XMLcarroserie = SubElement(XMLinformationsGenerales, 'carroserie')
+
+
+#DONNEES TECHNIQUES
+XMLinformationTechniques = SubElement(XMLdonneesVehicules,'informationsTechniques')
+
+#DONNES ESSENTIELLES
+XMLdonneesEssentielles = SubElement(XMLinformationTechniques,'donneesEssentielles')
+XMLnumeroSerie = SubElement(XMLdonneesEssentielles,'numeroSerie')
+XMLnumeroHomologation = SubElement(XMLdonneesEssentielles,'numeroHomologation')
+XMLaxeData = SubElement(XMLdonneesEssentielles,'axeData')
+XMLnombreAxe = SubElement(XMLaxeData,'nombreAxe')
+XMLdistanceInterAxe = SubElement(XMLaxeData,'distanceInterAxe')
+XMLrapportPuissanceMasse = SubElement(XMLdonneesEssentielles,'rapportPuissanceMasse')
+XMLvitesseMax = SubElement(XMLdonneesEssentielles,'vitesseMax')
+XMLcapaciteReservoir = SubElement(XMLdonneesEssentielles,'capaciteReservoir')
+
+#MOTEUR
+XMLmoteur = SubElement(XMLinformationTechniques,'moteur')
+XMLcylindree = SubElement(XMLmoteur,'cylindree')
+XMLpuissanceMaximale = SubElement(XMLmoteur,'puissanceMaximale')
+XMLtypeCarburant = SubElement(XMLmoteur,'typeCarburant')
+XMLregimeNominal = SubElement(XMLmoteur,'regimeNominal')
+XMLtypeMoteur = SubElement(XMLmoteur,'typeMoteur')
+
+#ENVIRONEMENTAL
+XMLenvironnemental = SubElement(XMLinformationTechniques,'environnemental')
+XMLniveauxSonores = SubElement(XMLenvironnemental,'niveauxSonores')
+XMLarret = SubElement(XMLniveauxSonores,'arret')
+XMLmarche = SubElement(XMLniveauxSonores,'marche') 
+XMLemissionGaz = SubElement(XMLenvironnemental,'emissionGaz')
+XMLCO2 = SubElement(XMLemissionGaz,'CO2')
+XMLclasseEnvironnementaleCE = SubElement(XMLemissionGaz,'classeEnvironnementaleCE')
+
+#MASSE
+    
+XMLmasses = SubElement(XMLinformationTechniques,'masses')
+XMLmaxTechniquementAdmissible = SubElement(XMLmasses,'maxTechniquementAdmissible')
+XMLmaxVehiculeEnService = SubElement(XMLmasses,'maxVehiculeEnService')
+XMLmaxEnsembleEnService = SubElement(XMLmasses,'maxEnsembleEnService')
+XMLmasseEnService = SubElement(XMLmasses,'masseEnService')
+XMLremorques = SubElement(XMLmasses,'remorques')
+XMLfreinee = SubElement(XMLremorques,'freinee')
+XMLnonFreinee = SubElement(XMLremorques,'nonFreinee')
+XMLrepartitionAxes = SubElement(XMLmasses,'repartitionAxes')
+XMLaxe = SubElement(XMLrepartitionAxes,'axe')
+XMLnumeroAxe = SubElement(XMLaxe,'numeroAxe')
+XMLmasseAxe = SubElement(XMLaxe,'masseAxe')
+
+#Attribution des valuers
+XMLmarque.text = marqueVehicule
+XMLnumeroSerie.text = numeroSerie
+XMLtypeVehicule.text = typeVehicule
+XMLnomCommercial.text = nomCommercial
+XMLcategorieVehicule.text = categorieVehicule
+XMLadresse2.text = adresseProprietaire
+XMLnom2.text = nomProprietaire
+XMLdatePremiereImmatriculation.text = datePremiereImmatriculation
+XMLdateImmatriculationCourante.text = dateDerniereImmatriculation
+XMLnumeroImmatriculation.text = immatriculation
+XMLmaxTechniquementAdmissible.text = masseMax
+XMLmaxVehiculeEnService.text = masseMax2
+
+
+
+
+
+####################             GENERATION DU XML            #######################
 
 if (os.path.exists(path)):
     os.remove(path)
 f= open(path,mode = 'xb')
-buffer = tostring(top)
+buffer = tostring(carteGrise)
 
 f.write(buffer)
 f.close()

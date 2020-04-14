@@ -2,7 +2,8 @@
 
 
 <!DOCTYPE carteGrise [
-    <!ELEMENT carteGrise (donneesImmatriculation, donneesNominative,informationVehicule)>
+  
+    <!ELEMENT carteGrise (donneesImmatriculation, donneesNominative, informationVehicule)>
 
 
     <!-- DONNEES IMMATRICULATION-->
@@ -15,12 +16,14 @@
 
     <!-- DONNEES NOMINATIVES-->
     <!ELEMENT donneesNominative (proprietaireCarteGrise,proprietaireVehicule, utilisateurVehicule)>
-    <!ELEMENT proprietaireCarteGrise (nom,prenom,dateNaissance)>
-    <!ELEMENT proprietaireVehicule (nom,prenom,dateNaissance)>
-    <!ELEMENT utilisateurVehicule (nom,prenom,dateNaissance)>
+    <!ELEMENT proprietaireCarteGrise (nom,prenom,dateNaissance,adresse)>
+    <!ELEMENT proprietaireVehicule (nom,prenom,dateNaissance,adresse)>
+    <!ELEMENT utilisateurVehicule (nom,prenom,dateNaissance,adresse)>
     <!ELEMENT nom (#PCDATA)>
     <!ELEMENT prenom (#PCDATA)>
     <!ELEMENT dateNaissance (#PCDATA)>
+	<!ELEMENT adresse (#PCDATA)>
+	
 
     <!-- INFORMATION VEHICULE-->
     <!ELEMENT informationVehicule (informationsGenerales, informationsTechniques)>
@@ -93,110 +96,58 @@
 ]>
      
 
-
-
 <carteGrise>
+	<donneesImmatriculation>
+		<numeroImmatriculation>PT313FT</numeroImmatriculation>
+		<datePremiereImmatriculation>08.11.2018</datePremiereImmatriculation>
+		<dateImmatriculationCourante />
+		<dureeValidite />
+		</donneesImmatriculation>
+	<donneesNominative>
+		<proprietaireCarteGrise>
+			<nom />
+			<prenom />
+			<dateNaissance />
+			<adresse />
+		</proprietaireCarteGrise>
+		
+		
+		<proprietaireVehicule>
+			<nom>MERCEDES-BENZ ITALIA SPA</nom>
+			<prenom />
+			<dateNaissance />
+			<adresse>VIA&#8217; BONA GIULIO VINCENZO 110
+ROMA (RM)
+(06761761002)</adresse>
+		</proprietaireVehicule>
+		
+		<utilisateurVehicule>
+			<nom />
+			<prenom />
+			<dateNaissance />
+			<adresse />
+		</utilisateurVehicule>
+	</donneesNominative>
 
-    <donneesImmatriculation>
-        <numeroImmatriculation>BF975XH</numeroImmatriculation>
-        <datePremiereImmatriculation>24/08/2006</datePremiereImmatriculation>
-        <dateImmatriculationCourante>26/09/2014</dateImmatriculationCourante>
-        <dureeValidite>10 ans</dureeValidite>
-    </donneesImmatriculation>
-
-    <donneesNominative>
-        <proprietaireCarteGrise>
-            <nom>RICHARD</nom>
-            <prenom>herve</prenom>
-            <dateNaissance>25/04/1966</dateNaissance>
-        </proprietaireCarteGrise>
-
-        <proprietaireVehicule>
-            <nom>RICHARD</nom>
-            <prenom>herve</prenom>
-            <dateNaissance>25/04/1966</dateNaissance>       
-        </proprietaireVehicule>
-
-        <utilisateurVehicule>
-            <nom>GUENDOUZI</nom>
-            <prenom>Matteo</prenom>        
-            <dateNaissance>14/04/1999</dateNaissance>
-        </utilisateurVehicule>
-    </donneesNominative>
-
-
-    <informationVehicule> 
-
-        <informationsGenerales>
-            <marque>Mercedez-Benz</marque>
-            <typeVehicule>0101 CDC5 F01YY5SU</typeVehicule>
-            <denominationCommerciale>X-Klasse</denominationCommerciale>
-            <couleur>rouge</couleur>
-            <places>
-                <placeAssise>5</placeAssise>
-                <placeDebout>0</placeDebout>
-            </places>
-            <categorieVehicule>N1G</categorieVehicule>
-            <destinationEtUsage>usage personnel</destinationEtUsage>
-            <carroserie>Break</carroserie>
-        </informationsGenerales>
-
-        <informationsTechniques>
-            <donneesEssentielles>
-                <numeroSerie>WFF4702541G545481</numeroSerie>
-                <numeroHomologation></numeroHomologation>
-                <axeData>
-                    <nombreAxe>2</nombreAxe>
-                    <distanceInterAxe>50mm</distanceInterAxe>
-                </axeData>
-                <rapportPuissanceMasse>200</rapportPuissanceMasse>
-                <vitesseMax>180</vitesseMax>
-                <capaciteReservoir>60</capaciteReservoir>
-            </donneesEssentielles>
-
-            <moteur>
-                <cylindree>2987.00</cylindree>
-                <puissanceMaximale>190.00</puissanceMaximale>
-                <typeCarburant>GASOL</typeCarburant>
-                <regimeNominal>2550</regimeNominal>
-                <typeMoteur>642</typeMoteur>
-            </moteur>
-
-            <environnemental>
-                <niveauxSonores>
-                    <arret>75</arret>
-                    <marche>120</marche>
-                </niveauxSonores>
-                
-                <emissionGaz>
-                    <CO2>230.0</CO2>
-                    <classeEnvironnementaleCE>2016/646/UE</classeEnvironnementaleCE>
-                </emissionGaz>
-            </environnemental>
-
-            <masses>
-                <maxTechniquementAdmissible>3000</maxTechniquementAdmissible>
-                <maxVehiculeEnService>3250</maxVehiculeEnService>
-                <maxEnsembleEnService>6180</maxEnsembleEnService>
-                <masseEnService>2500</masseEnService>
-              
-                <remorques>
-                    <freinee>2000</freinee>
-                    <nonFreinee>1500</nonFreinee>
-                </remorques>
-
-                <repartitionAxes>
-                    <axe>
-                        <numeroAxe>1</numeroAxe>
-                        <masseAxe>500</masseAxe>
-                    </axe>
-                     <axe>
-                        <numeroAxe>2</numeroAxe>
-                        <masseAxe>600</masseAxe>
-                    </axe>        
-                </repartitionAxes>
-
-            </masses>
-        </informationsTechniques>
-    </informationVehicule>
+	<informationVehicule>
+		<informationsEssentielles>
+			<marque>MERCEDES-BENZ</marque>
+			<typeVehicule>0101 CDC5 FO1YYSSU</typeVehicule>
+			<denominationCommerciale>X-KLASSE</denominationCommerciale>
+			<couleur />
+		</informationsEssentielles>
+	</informationVehicule>
 </carteGrise>
+
+
+
+
+
+
+
+
+
+
+
+
+
