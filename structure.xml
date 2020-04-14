@@ -13,18 +13,21 @@
             <nom>RICHARD</nom>
             <prenom>Herve</prenom>
             <dateNaissance>25/04/1966</dateNaissance>
+			<adresse> 15 rue marechal leclerc </adresse>
         </proprietaireCarteGrise>
 
         <proprietaireVehicule>
             <nom>RICHARD</nom>
             <prenom>Herve</prenom>
-            <dateNaissance>25/04/1966</dateNaissance>       
+            <dateNaissance>25/04/1966</dateNaissance>
+			<adresse> 15 rue marechal leclerc </adresse>			
         </proprietaireVehicule>
 
         <utilisateurVehicule>
             <nom>GUENDOUZI</nom>
             <prenom>Matteo</prenom>        
             <dateNaissance>14/04/1999</dateNaissance>
+			<adresse> 14 rue des moulins</adresse>
         </utilisateurVehicule>
     </donneesNominative>
 

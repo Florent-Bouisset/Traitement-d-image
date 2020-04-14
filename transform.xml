@@ -47,7 +47,17 @@
         <tr>
             <td>Date de naissance</td>
             <td><xsl:value-of select="carteGrise/donneesNominative/proprietaireCarteGrise/dateNaissance"/></td>
-        </tr>        
+        </tr>   
+
+
+		<tr>
+            <td>Adresse</td>
+            <td><xsl:value-of select="carteGrise/donneesNominative/proprietaireCarteGrise/adresse"/></td>
+        </tr>
+		
+		
+
+		
     </table>
 
     
@@ -66,7 +76,14 @@
         <tr>
             <td>Date de naissance</td>
             <td><xsl:value-of select="carteGrise/donneesNominative/proprietaireVehicule/dateNaissance"/></td>
-        </tr>    
+        </tr> 
+		
+		<tr>
+            <td>Adresse</td>
+            <td><xsl:value-of select="carteGrise/donneesNominative/proprietaireVehicule/adresse"/></td>
+        </tr>
+		
+		
     </table>
 
     <h4>Autre utilisateur du vehicule</h4>
@@ -87,6 +104,11 @@
             <td><xsl:value-of select="carteGrise/donneesNominative/utilisateurVehicule/dateNaissance"/></td>
         </tr>    
     
+		<tr>
+            <td>Adresse</td>
+            <td><xsl:value-of select="carteGrise/donneesNominative/utilisateurVehicule/adresse"/></td>
+        </tr>
+		
     </table>
 
 

@@ -1,7 +1,7 @@
 import lxml.etree as ET
 import os
 
-pathInputXML = "structure.xml"
+pathInputXML = "generatedXML.xml"
 pathInputXSLT = "transform.xml"
 pathOutputHTML = "cartegrise.html"
 

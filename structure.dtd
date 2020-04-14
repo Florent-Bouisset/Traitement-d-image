@@ -12,12 +12,14 @@
 
     <!-- DONNEES NOMINATIVES-->
     <!ELEMENT donneesNominative (proprietaireCarteGrise,proprietaireVehicule, utilisateurVehicule)>
-    <!ELEMENT proprietaireCarteGrise (nom,prenom,dateNaissance)>
-    <!ELEMENT proprietaireVehicule (nom,prenom,dateNaissance)>
-    <!ELEMENT utilisateurVehicule (nom,prenom,dateNaissance)>
+    <!ELEMENT proprietaireCarteGrise (nom,prenom,dateNaissance,adresse)>
+    <!ELEMENT proprietaireVehicule (nom,prenom,dateNaissance,adresse)>
+    <!ELEMENT utilisateurVehicule (nom,prenom,dateNaissance,adresse)>
     <!ELEMENT nom (#PCDATA)>
     <!ELEMENT prenom (#PCDATA)>
     <!ELEMENT dateNaissance (#PCDATA)>
+	<!ELEMENT adresse (#PCDATA)>
+	
 
     <!-- INFORMATION VEHICULE-->
     <!ELEMENT informationVehicule (informationsGenerales, informationsTechniques)>
