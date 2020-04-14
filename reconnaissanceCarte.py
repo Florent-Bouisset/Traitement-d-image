@@ -6,8 +6,9 @@ import matplotlib.pyplot as plt     #pour afficher une image
 import math                         #pour utiliser floor et ceil
 import pylab                        #pour afficher des courbes
 import os                           #pour avoir les paths
+from xml.etree import ElementTree
 from xml.etree.ElementTree import Element, SubElement, Comment, tostring
-
+from xml.dom import minidom
 
 
 
@@ -206,6 +207,12 @@ def processing_cadrage(image):
     return erosion
 
 
+def prettify(elem):
+    """Return a pretty-printed XML string for the Element.
+    """
+    rough_string = ElementTree.tostring(elem, 'utf-8')
+    reparsed = minidom.parseString(rough_string)
+    return reparsed.toprettyxml(indent="  ")
 
 
 ##########          Chargement de l'image           #######################
@@ -387,20 +394,21 @@ categorieVehicule = delimited_ocr(imageTraitee,coord)
 cv2.imshow('image final',imageTraitee)
 
 #Affichage résultat
-print("champ 1: " + numeroID)
-print("champ 2: " + numero)
-print("champ A: " + immatriculation)
-print("champ B: " + datePremiereImmatriculation)
-print("champ C.2.1: " + nomProprietaire)
-print("champ C.2.3: " + adresseProprietaire)
-print("champ D.1: " + marqueVehicule)
-print("champ D.2: " + typeVehicule)
-print("champ D.3: " + nomCommercial)
-print("champ E: " + numeroSerie)
-print("champ F.1: " + masseMax)
-print("champ F.2: " + masseMax2)
-print("champ I: " + dateDerniereImmatriculation)
-print("champ J: " + categorieVehicule)
+if(False):
+    print("champ 1: " + numeroID)
+    print("champ 2: " + numero)
+    print("champ A: " + immatriculation)
+    print("champ B: " + datePremiereImmatriculation)
+    print("champ C.2.1: " + nomProprietaire)
+    print("champ C.2.3: " + adresseProprietaire)
+    print("champ D.1: " + marqueVehicule)
+    print("champ D.2: " + typeVehicule)
+    print("champ D.3: " + nomCommercial)
+    print("champ E: " + numeroSerie)
+    print("champ F.1: " + masseMax)
+    print("champ F.2: " + masseMax2)
+    print("champ I: " + dateDerniereImmatriculation)
+    print("champ J: " + categorieVehicule)
 
 
 #####################     CREATION DE LA STRUCTURE XML          ############
@@ -525,11 +533,18 @@ XMLmaxVehiculeEnService.text = masseMax2
 if (os.path.exists(path)):
     os.remove(path)
 f= open(path,mode = 'xb')
-buffer = tostring(carteGrise)
 
+#prettify permet de rendre l'xml formatte pour la lecture humaine
+buffer = bytes(prettify(carteGrise),'utf-8')
 f.write(buffer)
 f.close()
-print("done")
+
+
+
+
+
+
+
 
 
 
