@@ -9,8 +9,12 @@ import os                           #pour avoir les paths
 from xml.etree import ElementTree
 from xml.etree.ElementTree import Element, SubElement, Comment, tostring
 from xml.dom import minidom
+from tkinter import Tk
+from tkinter.filedialog import askopenfilename
 
-
+Tk().withdraw() # we don't want a full GUI, so keep the root window from appearing
+filename = askopenfilename() # show an "Open" dialog box and return the path to the selected file
+print()
 
 
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
@@ -217,7 +221,7 @@ def prettify(elem):
 
 ##########          Chargement de l'image           #######################
 
-fichier = os.path.join(os.getcwd(),'images','carte1.jpg')
+fichier = filename
 imageOriginal = cv2.imread(fichier)
 
 
