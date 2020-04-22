@@ -4,6 +4,6 @@ en utilisant des méthodes de reconnaissance de caractères, un document XML est
 Ce document permet de génerer un HTML permettant d'afficher les données sous une forme facile à lire et uniformisée.
 
 <p align="center">
-  <img src="Apercu.png">
+  <img src="apercu.png">
 </p>
 
